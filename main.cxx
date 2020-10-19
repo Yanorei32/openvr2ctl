@@ -1,8 +1,6 @@
 #include <algorithm>
 #include <chrono>
 #include <cmath>
-#include <complex>
-#include <cstdio>
 #include <iostream>
 #include <numbers>
 #include <cstring>
