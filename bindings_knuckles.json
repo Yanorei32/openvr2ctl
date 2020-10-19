@@ -1,0 +1,64 @@
+{
+	"action_manifest_version" : 0,
+	"alias_info" : {},
+	"bindings" : {
+		"/actions/control" : {
+			"sources" : [
+				{
+					"inputs" : {
+						"position" : {
+							"output" : "/actions/control/in/direction"
+						}
+					},
+					"mode" : "joystick",
+					"path" : "/user/hand/left/input/thumbstick"
+				},
+				{
+					"inputs" : {
+						"position" : {
+							"output" : "/actions/control/in/speedvector2"
+						}
+					},
+					"mode" : "joystick",
+					"path" : "/user/hand/left/input/thumbstick"
+				},
+				{
+					"inputs" : {
+						"east" : {
+							"output" : "/actions/control/in/snapturnright"
+						},
+						"west" : {
+							"output" : "/actions/control/in/snapturnleft"
+						}
+					},
+					"mode" : "dpad",
+					"parameters" : {
+						"deadzone_pct" : "95",
+						"sub_mode" : "touch"
+					},
+					"path" : "/user/hand/right/input/thumbstick"
+				}
+			]
+		},
+		"/actions/default" : {
+			"sources" : [
+				{
+					"inputs" : {
+						"long" : {
+							"output" : "/actions/default/in/togglecontrol"
+						}
+					},
+					"mode" : "button",
+					"path" : "/user/hand/left/input/a"
+				}
+			]
+		}
+	},
+	"category" : "steamvr_input",
+	"controller_type" : "knuckles",
+	"description" : "",
+	"name" : "VRChat style movement",
+	"options" : {},
+	"simulated_actions" : []
+}
+

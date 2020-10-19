@@ -1,0 +1,51 @@
+{
+	"default_bindings": [
+		{
+			"binding_url": "bindings_knuckles.json",
+			"controller_type": "knuckles"
+		}
+	],
+	"actions": [
+		{
+			"name": "/actions/default/in/ToggleControl",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/control/in/DummyInputForControlOverride",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/control/in/SnapTurnLeft",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/control/in/SnapTurnRight",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/control/in/SpeedVector1",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/control/in/SpeedVector2",
+			"type": "vector2"
+		},
+		{
+			"name": "/actions/control/in/Direction",
+			"type": "vector2"
+		}
+	],
+	"localization": [
+		{
+			"language_tag": "en_US",
+			"/actions/default/in/ToggleControl": "Toggle Control",
+			"/actions/control/in/SnapTurnLeft": "Snap Turn Left",
+			"/actions/control/in/SnapTurnLeft": "Snap Turn Left",
+			"/actions/control/in/SnapTurnRight": "Snap Turn Right",
+			"/actions/control/in/SpeedVector1": "Speed (Vector1)",
+			"/actions/control/in/SpeedVector2": "Speed (Vector2)",
+			"/actions/control/in/Direction": "Direction"
+		}
+	]
+}
+
