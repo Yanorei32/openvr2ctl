@@ -7,7 +7,9 @@
 #include <thread>
 
 #define NOMINMAX
-#include <Windows.h>
+#include <windows.h>
+#include <fcntl.h>
+#include <io.h>
 
 #include "openvr.h"
 
@@ -93,6 +95,8 @@ float rad2deg(float rad) {
 }
 
 int main(int, char**) {
+	setmode(fileno(stdout), O_BINARY);
+
 	std::cerr << "VR Application Overlay initialization" << std::endl;
 
 	vr::EVRInitError error = vr::VRInitError_None;
