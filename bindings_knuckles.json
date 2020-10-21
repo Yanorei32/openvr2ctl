@@ -20,6 +20,9 @@
 						}
 					},
 					"mode" : "joystick",
+					"parameters": {
+						"exponent": "0.25"
+					},
 					"path" : "/user/hand/left/input/thumbstick"
 				},
 				{

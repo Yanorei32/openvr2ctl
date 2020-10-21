@@ -3,6 +3,10 @@
 		{
 			"binding_url": "bindings_knuckles.json",
 			"controller_type": "knuckles"
+		},
+		{
+			"binding_url": "bindings_vive_controller.json",
+			"controller_type": "vive_controller"
 		}
 	],
 	"actions": [
@@ -39,6 +43,7 @@
 		{
 			"language_tag": "en_US",
 			"/actions/default/in/ToggleControl": "Toggle Control",
+			"/actions/control/in/DummyInputForControlOverride": "Dummy input for control override",
 			"/actions/control/in/SnapTurnLeft": "Snap Turn Left",
 			"/actions/control/in/SnapTurnLeft": "Snap Turn Left",
 			"/actions/control/in/SnapTurnRight": "Snap Turn Right",

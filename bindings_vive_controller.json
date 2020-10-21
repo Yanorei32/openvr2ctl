@@ -1,0 +1,131 @@
+{
+	"action_manifest_version" : 0,
+	"alias_info" : {},
+	"app_key" : "system.generated.openvr2ctl.exe",
+	"bindings" : {
+		"/actions/control" : {
+			"sources" : [
+				{
+					"inputs" : {
+						"position" : {
+							"output" : "/actions/control/in/direction"
+						}
+					},
+					"mode" : "joystick",
+					"path" : "/user/hand/left/input/thumbstick"
+				},
+				{
+					"inputs" : {
+						"position" : {
+							"output" : "/actions/control/in/speedvector2"
+						}
+					},
+					"mode" : "joystick",
+					"parameters" : {
+						"exponent" : "0.25"
+					},
+					"path" : "/user/hand/left/input/thumbstick"
+				},
+				{
+					"inputs" : {
+						"east" : {
+							"output" : "/actions/control/in/snapturnright"
+						},
+						"west" : {
+							"output" : "/actions/control/in/snapturnleft"
+						}
+					},
+					"mode" : "dpad",
+					"parameters" : {
+						"deadzone_pct" : "95",
+						"sub_mode" : "touch"
+					},
+					"path" : "/user/hand/right/input/thumbstick"
+				},
+				{
+					"inputs" : {
+						"click" : {
+							"output" : "/actions/control/in/dummyinputforcontroloverride"
+						},
+						"position" : {
+							"output" : "/actions/control/in/direction"
+						}
+					},
+					"mode" : "trackpad",
+					"path" : "/user/hand/left/input/trackpad"
+				},
+				{
+					"inputs" : {
+						"pull" : {
+							"output" : "/actions/control/in/speedvector1"
+						}
+					},
+					"mode" : "trigger",
+					"path" : "/user/hand/left/input/trigger"
+				},
+				{
+					"inputs" : {
+						"pull" : {
+							"output" : "/actions/control/in/speedvector1"
+						}
+					},
+					"mode" : "trigger",
+					"path" : "/user/hand/right/input/trigger"
+				},
+				{
+					"inputs" : {
+						"east" : {
+							"output" : "/actions/control/in/snapturnright"
+						},
+						"west" : {
+							"output" : "/actions/control/in/snapturnleft"
+						}
+					},
+					"mode" : "dpad",
+					"parameters" : {
+						"sub_mode" : "click"
+					},
+					"path" : "/user/hand/right/input/trackpad"
+				}
+			]
+		},
+		"/actions/default" : {
+			"sources" : [
+				{
+					"inputs" : {
+						"long" : {
+							"output" : "/actions/default/in/togglecontrol"
+						}
+					},
+					"mode" : "button",
+					"path" : "/user/hand/left/input/a"
+				},
+				{
+					"inputs" : {
+						"long" : {
+							"output" : "/actions/default/in/togglecontrol"
+						}
+					},
+					"mode" : "button",
+					"path" : "/user/hand/left/input/grip"
+				},
+				{
+					"inputs" : {
+						"long" : {
+							"output" : "/actions/default/in/togglecontrol"
+						}
+					},
+					"mode" : "button",
+					"path" : "/user/hand/right/input/grip"
+				}
+			]
+		}
+	},
+	"category" : "steamvr_input",
+	"controller_type" : "vive_controller",
+	"description" : "",
+	"name" : "VRChat like movement",
+	"options" : {},
+	"simulated_actions" : []
+}
+

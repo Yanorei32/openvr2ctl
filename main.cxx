@@ -1,15 +1,22 @@
 #include <algorithm>
 #include <chrono>
 #include <cmath>
+#include <cstdio>
+#include <cstring>
+#include <filesystem>
 #include <iostream>
 #include <numbers>
-#include <cstring>
+#include <string>
 #include <thread>
 
-#define NOMINMAX
-#include <windows.h>
+#ifdef _MSC_BUILD
 #include <fcntl.h>
 #include <io.h>
+#endif
+
+#ifdef __CYGWIN__
+#include <windows.h>
+#endif
 
 #include "openvr.h"
 
@@ -84,18 +91,14 @@ bool getDigitalActionRisingEdge(
 	return actionData.bActive && actionData.bChanged && actionData.bState;
 }
 
-void getActionManifestPath(char* path) {
-	GetModuleFileName(NULL, path, MAX_PATH);
-
-	std::strcpy(std::strrchr(path, '\\') + 1, "actions.json");
-}
-
 float rad2deg(float rad) {
 	return rad * 180 / std::numbers::pi;
 }
 
 int main(int, char**) {
+#ifdef _MSC_BUILD
 	setmode(fileno(stdout), O_BINARY);
+#endif
 
 	std::cerr << "VR Application Overlay initialization" << std::endl;
 
@@ -121,11 +124,19 @@ int main(int, char**) {
 	vr::VRActionHandle_t	controlDirection			= vr::k_ulInvalidActionHandle;
 
 
-	char path[MAX_PATH];
+	auto actionsPathCptr = (std::filesystem::current_path() / "actions.json").string().c_str();
 
-	getActionManifestPath(path);
+#ifdef __CYGWIN__
+	char winpath[MAX_PATH];
+	GetModuleFileName(NULL, winpath, MAX_PATH);
+	std::strcpy(std::strrchr(winpath, '\\') + 1, "actions.json");
 
-	vr::VRInput()->SetActionManifestPath(path);
+	actionsPathCptr = winpath;
+#endif
+
+	vr::VRInput()->SetActionManifestPath(
+		actionsPathCptr
+	);
 
 	vr::VRInput()->GetActionSetHandle(
 		"/actions/default",
@@ -215,7 +226,11 @@ int main(int, char**) {
 			-std::atan2(-directionRaw.x, directionRaw.y)
 		);
 
+#ifdef DEBUG
 		if (speed != oldSpeed || oldDirection != direction) {
+#else
+		if (1) {
+#endif
 			std::cout << "move " << speed << " " << direction << std::endl;
 		}
 
