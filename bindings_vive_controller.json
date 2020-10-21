@@ -7,27 +7,6 @@
 			"sources" : [
 				{
 					"inputs" : {
-						"position" : {
-							"output" : "/actions/control/in/direction"
-						}
-					},
-					"mode" : "joystick",
-					"path" : "/user/hand/left/input/thumbstick"
-				},
-				{
-					"inputs" : {
-						"position" : {
-							"output" : "/actions/control/in/speedvector2"
-						}
-					},
-					"mode" : "joystick",
-					"parameters" : {
-						"exponent" : "0.25"
-					},
-					"path" : "/user/hand/left/input/thumbstick"
-				},
-				{
-					"inputs" : {
 						"east" : {
 							"output" : "/actions/control/in/snapturnright"
 						},
