@@ -197,8 +197,9 @@ int main(int, char**) {
 			if (getDigitalActionRisingEdge(defaultToggleControl)) {
 				std::cerr << "Activate State: Control" << std::endl;
 				inControl = true;
-				continue;
 			}
+
+			continue;
 		}
 
 		vr::VRInput()->UpdateActionState(&sets[0], sizeof(sets[0]), 2);
